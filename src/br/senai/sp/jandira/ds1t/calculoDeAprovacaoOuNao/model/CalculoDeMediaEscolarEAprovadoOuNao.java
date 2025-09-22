@@ -9,7 +9,7 @@ public class CalculoDeMediaEscolarEAprovadoOuNao {
     double nota3;
     double nota4;
     double resultadoDaMedia;
-    String resultadoDoEstadoDoAlunoEmRelacaoANota;
+    String aprovadoOuNao;
     String nome;
 
     public void obterDados (){
@@ -38,9 +38,9 @@ public class CalculoDeMediaEscolarEAprovadoOuNao {
         resultadoDaMedia = (nota1 + nota2 + nota3 + nota4) / (4);
 
         if(resultadoDaMedia >= 5){
-            resultadoDoEstadoDoAlunoEmRelacaoANota = ("Aprovado") ;
+            aprovadoOuNao = ("Aprovado") ;
         } else {
-            resultadoDoEstadoDoAlunoEmRelacaoANota = ("Reprovado");
+            aprovadoOuNao = ("Reprovado");
         }
 
         exibirResultado();
@@ -49,7 +49,7 @@ public class CalculoDeMediaEscolarEAprovadoOuNao {
     public void exibirResultado(){
         System.out.println("***********************************");
         System.out.println("A média do estudante " + nome + " é : " + resultadoDaMedia);
-        System.out.println("Resultado: O(a) aluno(a) " + nome + " está " + resultadoDoEstadoDoAlunoEmRelacaoANota + "!");
+        System.out.println("Resultado: O(a) aluno(a) " + nome + " está " + aprovadoOuNao + "!");
         System.out.println("***********************************");
     }
 }
