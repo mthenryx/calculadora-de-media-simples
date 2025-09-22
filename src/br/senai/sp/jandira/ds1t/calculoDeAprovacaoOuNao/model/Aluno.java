@@ -2,7 +2,7 @@ package br.senai.sp.jandira.ds1t.calculoDeAprovacaoOuNao.model;
 
 import java.util.Scanner;
 
-public class CalculoDeMediaEscolarEAprovadoOuNao {
+public class Aluno {
 
     double nota1;
     double nota2;
@@ -30,10 +30,10 @@ public class CalculoDeMediaEscolarEAprovadoOuNao {
         System.out.print("Digite a nota da ativiade 4:");
         nota4 = leitor.nextDouble();
 
-        calculoDaMediaEResultado();
+        calcularMediaESituacao();
     }
 
-    public void calculoDaMediaEResultado(){
+    public void calcularMediaESituacao(){
 
         resultadoDaMedia = (nota1 + nota2 + nota3 + nota4) / (4);
 
@@ -47,9 +47,9 @@ public class CalculoDeMediaEscolarEAprovadoOuNao {
     }
 
     public void exibirResultado(){
-        System.out.println("***********************************");
+        System.out.println("*********************************************");
         System.out.println("A média do estudante " + nome + " é : " + resultadoDaMedia);
         System.out.println("Resultado: O(a) aluno(a) " + nome + " está " + aprovadoOuNao + "!");
-        System.out.println("***********************************");
+        System.out.println("*********************************************");
     }
 }
