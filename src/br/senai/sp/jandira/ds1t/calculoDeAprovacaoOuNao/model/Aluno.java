@@ -41,10 +41,12 @@ public class Aluno {
     }
 
     public void determinarSituacao() {
-        if(resultadoDaMedia >= 5){
-            aprovadoOuNao = ("Aprovado(a)") ;
+        if (resultadoDaMedia >= 5) {
+            aprovadoOuNao = "Aprovado(a)";
+        } else if (resultadoDaMedia < 3.0){
+            aprovadoOuNao = "Reprovado(a)";
         } else {
-            aprovadoOuNao = ("Reprovado(a)");
+            aprovadoOuNao = "de Recuperação";
         }
 
         exibirResultado();
@@ -52,7 +54,7 @@ public class Aluno {
 
     public void exibirResultado(){
         System.out.println("*********************************************");
-        System.out.println("A média do estudante " + nome + " é : " + resultadoDaMedia);
+        System.out.println("A média do estudante(a) " + nome + " é : " + resultadoDaMedia);
         System.out.println("Resultado: O(a) aluno(a) " + nome + " está " + aprovadoOuNao + "!");
         System.out.println("*********************************************");
     }
