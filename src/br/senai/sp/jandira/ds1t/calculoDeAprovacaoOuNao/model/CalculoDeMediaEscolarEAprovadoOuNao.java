@@ -1,4 +1,55 @@
 package br.senai.sp.jandira.ds1t.calculoDeAprovacaoOuNao.model;
 
+import java.util.Scanner;
+
 public class CalculoDeMediaEscolarEAprovadoOuNao {
+
+    double nota1;
+    double nota2;
+    double nota3;
+    double nota4;
+    double resultadoDaMedia;
+    String resultadoDoEstadoDoAlunoEmRelacaoANota;
+    String nome;
+
+    public void obterDados (){
+        Scanner leitor = new Scanner(System.in);
+
+        System.out.print("Digite o nome do aluno: ");
+        nome = leitor.nextLine();
+
+        System.out.print("Digite a nota da atividade  1:");
+        nota1 = leitor.nextDouble();
+
+        System.out.print("Digite a nota da atividade 2:");
+        nota2 = leitor.nextDouble();
+
+        System.out.print("Digite a nota da ativiade 3:");
+        nota3 = leitor.nextDouble();
+
+        System.out.print("Digite a nota da ativiade 4:");
+        nota4 = leitor.nextDouble();
+
+        calculoDaMediaEResultado();
+    }
+
+    public void calculoDaMediaEResultado(){
+
+        resultadoDaMedia = (nota1 + nota2 + nota3 + nota4) / (4);
+
+        if(resultadoDaMedia >= 5){
+            resultadoDoEstadoDoAlunoEmRelacaoANota = ("Aprovado") ;
+        } else {
+            resultadoDoEstadoDoAlunoEmRelacaoANota = ("Reprovado");
+        }
+
+        exibirResultado();
+    }
+
+    public void exibirResultado(){
+        System.out.println("***********************************");
+        System.out.println("A média do estudante " + nome + " é : " + resultadoDaMedia);
+        System.out.println("Resultado: O(a) aluno(a) " + nome + " está " + resultadoDoEstadoDoAlunoEmRelacaoANota + "!");
+        System.out.println("***********************************");
+    }
 }
