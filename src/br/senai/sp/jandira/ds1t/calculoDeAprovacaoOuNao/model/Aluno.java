@@ -33,14 +33,18 @@ public class Aluno {
         calcularMediaESituacao();
     }
 
-    public void calcularMediaESituacao(){
+    public void calcularMediaESituacao() {
+        double somaDasNotas = nota1 + nota2 + nota3 + nota4;
+        resultadoDaMedia = somaDasNotas / 4;
 
-        resultadoDaMedia = (nota1 + nota2 + nota3 + nota4) / (4);
+        determinarSituacao();
+    }
 
+    public void determinarSituacao() {
         if(resultadoDaMedia >= 5){
-            aprovadoOuNao = ("Aprovado") ;
+            aprovadoOuNao = ("Aprovado(a)") ;
         } else {
-            aprovadoOuNao = ("Reprovado");
+            aprovadoOuNao = ("Reprovado(a)");
         }
 
         exibirResultado();
